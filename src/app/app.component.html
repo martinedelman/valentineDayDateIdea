@@ -1,0 +1,14 @@
+<div *ngIf="!sheSaidYes" class="question">
+  <h1>¿Quieres ser mi san Valentin?</h1>
+  <div class="buttons">
+    <button (click)="selectedYes()" *ngIf="!sheSaidNo" class="buttonYes">SI</button>
+    <button *ngIf="!sheSaidNo" class="buttonNo" (pointerover)="changeButtonPosition()" (click)="selectedNo()" id="btn">NO</button>
+    <img *ngIf="sheSaidNo" src="https://media1.tenor.com/m/t7_iTN0iYekAAAAd/sad-sad-cat.gif" alt="">
+  </div>
+</div>
+<div *ngIf="sheSaidYes" class="response">
+  <p>Entonces vamos a ir a <a href="{{dateIdea.where}}" target="_blank">{{dateIdea.place}}</a> a las {{dateIdea.date}}
+  </p>
+  <p>{{dateIdea.description}}</p>
+  <img src="https://media1.tenor.com/m/Ce_EIG6qg0kAAAAC/happy-happy-happy-happy.gif" alt="">
+</div>
